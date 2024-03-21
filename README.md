@@ -24,6 +24,10 @@ In mostly  times it is necessary to re-pair to times each device in order to con
 
 ![Alt text](pictures/Zigbee_Device.JPG)
 
+## Usage
+
+This TRV can be used in Home Assistant with automations or  topics MQTT.
+
 ## Presentation
 On exposes GUI can be found below options
 
@@ -33,14 +37,15 @@ On exposes GUI can be found below options
 
 ![Alt text](pictures/Avatto_exposes_Schedule.JPG)
 
-## Contributing
+#  Display brightness Level, Screen orientation, Climate Mode
 
-Helper source : 
-   
+![Alt text](pictures/Avatto_exposes_2.JPG)
+
+## Helper source :
+
 https://github.com/zigpy/zha-device-handlers/issues/2750
     
 https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
