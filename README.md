@@ -45,9 +45,12 @@ mqtt:
 ```
 Restart Home Assistant to take effect.
 
-![Alt text](pictures/Temperature_sensor.JPG)
+![Alt text](pictures/Avatto-About_TRV07-TS0601.JPG)
 
 ## Presentation
+
+![Alt text](pictures/Temperature_sensor.JPG)
+
 Climate TRV on Home Assistant
 
 ![Alt text](pictures/Avatto_Climate_TRV.JPG)
