@@ -28,6 +28,23 @@ In mostly  times it is necessary to re-pair to times each device in order to con
 
 This TRV can be used in Home Assistant with automations or  topics MQTT.
 
+Example to create temperature sensor from TRV valve in Home Assistant
+
+Add to /homeassistant/configuration.yaml under mqtt config:
+
+```bash
+mqtt:
+  sensor:
+  - name: "trvzone1_temperature"
+    state_topic: "zigbee2mqtt/trvzone1"
+    unique_id: trvzone1temperature
+    unit_of_measurement: "°C"
+    device_class: "temperature"
+    qos: 0
+    value_template: "{{ (value|from_json)['local_temperature'] }}"
+```
+Restart Home Assistant to take effect.
+
 ## Presentation
 Climate TRV on Home Assistant
 
