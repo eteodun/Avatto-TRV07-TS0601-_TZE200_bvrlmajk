@@ -45,9 +45,12 @@ mqtt:
 ```
 Restart Home Assistant to take effect.
 
+## Presentation
+About 
+
 ![Alt text](pictures/Avatto-About_TRV07-TS0601.JPG)
 
-## Presentation
+Temperature sensor 
 
 ![Alt text](pictures/Temperature_sensor.JPG)
 
