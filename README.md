@@ -1,15 +1,46 @@
-   I have created this external convertor for Zigbee2MQTT in order to be used this TRV valve in Homeassistant.
-   Personal I use just to shut off and on TRV valve.
-    Isn't ready 100% but can be useful
-    Report and can be configured :
-     Battery level
-     Max min temperature
-     Position report
-     Local temperature
-     Heating set point 
-     Linkquality
-     System mode 
-     
-   Helper source : 
-    https://github.com/zigpy/zha-device-handlers/issues/2750
-    https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+#  External convertor for:  TRV Valve Avatto-TRV07-TS0601 Zigbee2MQTT
+#  ManufacturerName:   _TZE200_bvrlmajk
+
+![Alt text](pictures/Avatto-TRV07-TS0601.JPG)
+
+The convertor has been tested and worked fine with Zigbee2MQTT fresh installed.
+
+I recommend fresh installation of zigbee2MQTT in case other converters were used for this type of valve. 
+
+
+## Installation
+
+Upload tuyats601.js to zigbee2mqtt folder.
+Add to zigbee2mqtt/configuration.yaml 
+
+```bash
+external_converters:
+  - tuyats601.js
+  - other_convertor.js
+```
+Restart zigbee2MQTT service and start to pair devices. 
+
+In mostly  times it is necessary to re-pair to times each device in order to configured on zigbee GUI
+
+![Alt text](pictures/Zigbee_Device.JPG)
+
+## Presentation
+On exposes GUI can be found below options
+
+![Alt text](pictures/Avatto_exposes_1.JPG)
+
+# Scheduler 
+
+![Alt text](pictures/Avatto_exposes_Schedule.JPG)
+
+## Contributing
+
+Helper source : 
+   
+https://github.com/zigpy/zha-device-handlers/issues/2750
+    
+https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
