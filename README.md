@@ -45,6 +45,8 @@ mqtt:
 ```
 Restart Home Assistant to take effect.
 
+![Alt text](pictures/Temperature_sensor.JPG)
+
 ## Presentation
 Climate TRV on Home Assistant
 
