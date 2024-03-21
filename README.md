@@ -29,6 +29,10 @@ In mostly  times it is necessary to re-pair to times each device in order to con
 This TRV can be used in Home Assistant with automations or  topics MQTT.
 
 ## Presentation
+Climate TRV on Home Assistant
+
+![Alt text](pictures/Avatto_Climate_TRV.JPG)
+
 On exposes GUI can be found below options
 
 ![Alt text](pictures/Avatto_exposes_1.JPG)
