@@ -77,4 +77,4 @@ https://github.com/zigpy/zha-device-handlers/issues/2750
 https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
 
 ## License
-
+[GPL](https://choosealicense.com/licenses/gpl-3.0/)
