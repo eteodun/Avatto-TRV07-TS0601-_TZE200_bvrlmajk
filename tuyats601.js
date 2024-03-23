@@ -35,7 +35,7 @@ const definition = {
     configure: tuya.configureMagicPacket,
     exposes: [
         e.battery(), e.child_lock(), e.max_temperature(), e.min_temperature(),
-        e.position(), e.window_detection(),
+        e.position(), e.window_detection(),tuya.exposes.faultAlarm(),
         exposes.binary('window', ea.STATE, 'OPEN', 'CLOSE').withDescription('Window status closed or open '),
         exposes.climate()
             .withLocalTemperature(ea.STATE).withSetpoint('current_heating_setpoint', 5, 35, 0.5, ea.STATE_SET)
@@ -67,7 +67,7 @@ const definition = {
            [8, 'window_detection', tuya.valueConverter.onOff],
            [12, 'child_lock', tuya.valueConverter.lockUnlock],
            [13, 'battery', tuya.valueConverter.raw],
-           [14, 'fault', tuya.valueConverter.onOff],
+           [14, 'fault_alarm', tuya.valueConverter.trueFalse1],
            [15, 'min_temperature', tuya.valueConverter.divideBy10],
            [16, 'max_temperature', tuya.valueConverter.divideBy10],
            [17, 'schedule_monday', tuya.valueConverter.thermostatScheduleDayMultiDPWithDayNumber(1)],
