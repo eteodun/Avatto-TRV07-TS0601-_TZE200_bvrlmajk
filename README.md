@@ -20,7 +20,7 @@ external_converters:
 ```
 Restart zigbee2MQTT service and start to pair devices. 
 
-In mostly  times it is necessary to re-pair to times each device in order to configured on zigbee GUI
+In mostly  times it is necessary to re-pair two times each device in order to configured on zigbee GUI
 
 ![Alt text](pictures/Zigbee_Device.JPG)
 
