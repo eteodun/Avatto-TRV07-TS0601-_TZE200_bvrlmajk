@@ -52,6 +52,12 @@ const definition = {
         e.enum('screen_orientation', ea.STATE_SET, ['up', 'down']).withDescription('Screen orientation'),
         e.enum('mode', ea.STATE_SET, ['comfort', 'eco']).withDescription('Hysteresis - comfort > switches off/on exactly at reached ' +
             'temperature with valve smooth from 0 to 100%, eco > 0.5 degrees above or below, valve either 0 or 100%'),
+        e.numeric("switch_deviation_eco", ea.STATE_SET)
+                .withValueMin(0.5)
+                .withValueMax(5.0)
+                .withValueStep(0.1)
+                .withUnit("°C")
+                .withDescription("Switch deviation (energy-saving mode only)"),
     ],
     meta: {
         // All datapoints go in here
@@ -83,9 +89,11 @@ const definition = {
                'up': tuya.enum(0), 'right': tuya.enum(1), 'down': tuya.enum(2), 'left': tuya.enum(3),
            })],
            [114, 'mode', tuya.valueConverterBasic.lookup({'comfort': tuya.enum(1), 'eco': tuya.enum(0)})],
+           [115, "switch_deviation_eco", tuya.valueConverter.divideBy10],
 
         ],
     },
 };
+
 
 module.exports = definition;
