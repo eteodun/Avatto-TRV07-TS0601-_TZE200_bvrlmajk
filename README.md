@@ -26,6 +26,8 @@ In mostly  times it is necessary to re-pair two times each device in order to co
 On folder zigbee2mqtt create new folder named "external_converters" and place external convertor file in this director.
 
 
+
+
 ![Alt text](pictures/Zigbee_Device.JPG)
 
 ## Usage
