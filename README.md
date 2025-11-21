@@ -8,7 +8,7 @@ The convertor has been tested and worked fine with Zigbee2MQTT fresh installed.
 I recommend fresh installation of zigbee2MQTT in case other converters were used for this type of valve. 
 
 ## Please don't associate or report  issues related to problems by supported devices provided by Zigbee2MQTT. 
-This external convertor has been created before publish support for this type of TRV valve by  Zigbee2MQTT and was not implemented on Zigbee2MQTT
+## This external convertor has been created before publish support for this type of TRV valve by  Zigbee2MQTT and was not implemented on Zigbee2MQTT
 
 ## Installation on Zigbee2MQTT version older than 2.00
 Upload tuyats601.js to zigbee2mqtt folder.
