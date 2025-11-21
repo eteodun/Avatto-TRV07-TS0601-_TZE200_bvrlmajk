@@ -7,6 +7,8 @@ The convertor has been tested and worked fine with Zigbee2MQTT fresh installed.
 
 I recommend fresh installation of zigbee2MQTT in case other converters were used for this type of valve. 
 
+**Please don't associate or open issues related to supported devices provided by Zigbee2MQTT. 
+This external convertor has been created before publish support for this type of TRV valve by  Zigbee2MQTT.**
 
 ## Installation
 
