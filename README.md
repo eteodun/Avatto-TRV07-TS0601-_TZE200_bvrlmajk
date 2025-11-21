@@ -10,8 +10,7 @@ I recommend fresh installation of zigbee2MQTT in case other converters were used
 **Please don't associate or open issues related to supported devices provided by Zigbee2MQTT. 
 This external convertor has been created before publish support for this type of TRV valve by  Zigbee2MQTT.**
 
-## Installation
-
+## Installation on Zigbee2MQTT version older than 2.00
 Upload tuyats601.js to zigbee2mqtt folder.
 Add to zigbee2mqtt/configuration.yaml 
 
@@ -23,6 +22,9 @@ external_converters:
 Restart zigbee2MQTT service and start to pair devices. 
 
 In mostly  times it is necessary to re-pair two times each device in order to configured on zigbee GUI
+## Installation on Zigbee2MQTT version greater than 2.00
+On folder zigbee2mqtt create new folder named "external_converters" and place external convertor file in this director.
+
 
 ![Alt text](pictures/Zigbee_Device.JPG)
 
