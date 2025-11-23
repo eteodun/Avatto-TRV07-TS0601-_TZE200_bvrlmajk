@@ -73,8 +73,8 @@ Restart Home Assistant to take effect.
 
 ## Presentation
 About 
-
-![Alt text](pictures/Avatto-About_TRV07-TS0601.JPG)
+In order to confirm that you use external convertor, must show Supported: external, no picture with TRV. If show Supported: native, is from supported devices by Zigbee2Mqtt. 
+![Alt text](pictures/Device_joined.JPG)
 
 Temperature sensor 
 
