@@ -88,7 +88,7 @@ https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuy
 ## License
 [GPL](https://choosealicense.com/licenses/gpl-3.0/)
 
+# Avatto TRV07 TS0601 Converter
 
-Avatto TRV07 TS0601 Converter 
-Original implementation by eteodun, Mar 21, 2024
+Original implementation by eteodun, Mar 21, 2024  
 Licensed under GPL-3.0
