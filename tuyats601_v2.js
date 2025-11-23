@@ -1,4 +1,5 @@
-//Version2
+//Version2.1
+//Updated option comfort/eco mode and text description 
 const {} = require('zigbee-herdsman-converters/lib/modernExtend');
 // Add the lines below
 const exposes = require('zigbee-herdsman-converters/lib/exposes');
@@ -6,7 +7,6 @@ const tuya = require('zigbee-herdsman-converters/lib/tuya');
 const {} = require('zigbee-herdsman-converters/lib/tuya');
 const e = exposes.presets;
 const ea = exposes.access;
-
 const definition = {
     // Since a lot of TuYa devices use the same modelID, but use different datapoints
     // it's necessary to provide a fingerprint instead of a zigbeeModel
@@ -28,14 +28,10 @@ const definition = {
     onEvent: tuya.onEventSetLocalTime, // Add this if you are getting no converter for 'commandMcuSyncTime'
     configure: tuya.configureMagicPacket,
     exposes: [
-        e.battery(), 
-        e.child_lock(), 
-        e.max_temperature(), 
-        e.min_temperature(),
-        exposes.numeric('position', ea.STATE).withUnit('%').withDescription('Valve position').withValueMin(0).withValueMax(100),
-        e.window_detection(), // Switch ON/OFF pentru activarea funcției
-        tuya.exposes.faultAlarm(),
-        exposes.binary('window', ea.STATE, 'OPEN', 'CLOSED').withDescription('Window status closed or open'), // Senzor actual
+        e.battery(), e.child_lock(), e.max_temperature(), e.min_temperature(),
+        e.position(), 
+        e.window_detection(),
+        e.binary("window", ea.STATE, "CLOSE", "OPEN").withDescription("Window status closed or open. Active when temperature drops by more than 1.5°C within 4.5 min "),
         exposes.climate()
             .withLocalTemperature(ea.STATE).withSetpoint('current_heating_setpoint', 5, 35, 0.5, ea.STATE_SET)
             .withLocalTemperatureCalibration(-30, 30, 0.1, ea.STATE_SET)
@@ -50,8 +46,17 @@ const definition = {
         ...tuya.exposes.scheduleAllDays(ea.STATE_SET, 'HH:MM/C HH:MM/C HH:MM/C HH:MM/C'),
         e.enum('display_brightness', ea.STATE_SET, ['high', 'medium', 'low']).withDescription('Display brightness'),
         e.enum('screen_orientation', ea.STATE_SET, ['up', 'down']).withDescription('Screen orientation'),
-        e.enum('mode', ea.STATE_SET, ['comfort', 'eco']).withDescription('Hysteresis - comfort > switches off/on exactly at reached ' +
-            'temperature with valve smooth from 0 to 100%, eco > 0.5 degrees above or below, valve either 0 or 100%'),
+        e.enum('mode', ea.STATE_SET, ['comfort', 'eco']).withDescription(`
+            Control Mode Explanation:
+            Comfort (PID/Proportional): Valve opens/closes gradually (0-100%) for high accuracy.
+            Eco (Hysteresis): Valve is On/Off (0% or 100%). Deviation switch_deviation_eco only applies here.
+        `),
+        e.numeric("switch_deviation_eco", ea.STATE_SET)
+            .withValueMin(0.5)
+            .withValueMax(5.0)
+            .withValueStep(0.1)
+            .withUnit("°C")
+            .withDescription("Temperature deviation for Eco mode switching (asymmetric hysteresis). Only active in Eco mode."),
     ],
     meta: {
         // All datapoints go in here
@@ -62,11 +67,10 @@ const definition = {
            [2, 'current_heating_setpoint', tuya.valueConverter.divideBy10],
            [3, 'local_temperature', tuya.valueConverter.divideBy10],
            [6, 'running_state', tuya.valueConverterBasic.lookup({'heat': 1, 'idle': 0})],
-           [7, 'window', tuya.valueConverterBasic.lookup({'OPEN': 1, 'CLOSED': 0})],
-           [8, 'window_detection', tuya.valueConverterBasic.lookup({'ON': true, 'OFF': false})],
+           [7, 'window', tuya.valueConverterBasic.lookup({'OPEN': 1, 'CLOSE': 0})],
+           [8, 'window_detection', tuya.valueConverter.onOff],
            [12, 'child_lock', tuya.valueConverter.lockUnlock],
            [13, 'battery', tuya.valueConverter.raw],
-           [14, 'fault_alarm', tuya.valueConverter.trueFalse0],
            [15, 'min_temperature', tuya.valueConverter.divideBy10],
            [16, 'max_temperature', tuya.valueConverter.divideBy10],
            [17, 'schedule_monday', tuya.valueConverter.thermostatScheduleDayMultiDPWithDayNumber(1)],
@@ -82,7 +86,8 @@ const definition = {
            [113, 'screen_orientation', tuya.valueConverterBasic.lookup({
                'up': tuya.enum(0), 'right': tuya.enum(1), 'down': tuya.enum(2), 'left': tuya.enum(3),
            })],
-           [114, 'mode', tuya.valueConverterBasic.lookup({'comfort': tuya.enum(1), 'eco': tuya.enum(0)})],
+           [114, 'mode', tuya.valueConverterBasic.lookup({'comfort': tuya.enum(0), 'eco': tuya.enum(1)})],
+           [115, "switch_deviation_eco", tuya.valueConverter.divideBy10],
 
         ],
     },
