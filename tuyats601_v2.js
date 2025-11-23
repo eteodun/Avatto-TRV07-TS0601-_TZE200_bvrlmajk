@@ -1,5 +1,7 @@
 //Version2.1
-//Updated option comfort/eco mode and text description 
+//Updated option comfort/eco mode and text description
+//# Copyright 2024, eteodun
+//# Licensed under the GPL-3.0 License
 const {} = require('zigbee-herdsman-converters/lib/modernExtend');
 // Add the lines below
 const exposes = require('zigbee-herdsman-converters/lib/exposes');
@@ -94,3 +96,4 @@ const definition = {
 };
 
 module.exports = definition;
+
