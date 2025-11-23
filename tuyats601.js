@@ -1,4 +1,4 @@
-//# Copyright 2024, eteodun
+//# Copyright 2023, eteodun
 //# Licensed under the GPL-3.0 License
 const {} = require('zigbee-herdsman-converters/lib/modernExtend');
 // Add the lines below
