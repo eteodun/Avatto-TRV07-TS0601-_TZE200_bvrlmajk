@@ -32,7 +32,9 @@ const definition = {
     exposes: [
         e.battery(), e.child_lock(), e.max_temperature(), e.min_temperature(),
         e.position(), 
-        e.window_detection(),
+        e.binary('window_detection', ea.STATE_SET, 'ON', 'OFF')
+            .withLabel('Window detection')
+            .withDescription('Active Window detection'),
         e.binary("window", ea.STATE, "CLOSE", "OPEN").withDescription("Window status closed or open. Active when temperature drops by more than 1.5°C within 4.5 min "),
         exposes.climate()
             .withLocalTemperature(ea.STATE).withSetpoint('current_heating_setpoint', 5, 35, 0.5, ea.STATE_SET)
@@ -96,5 +98,6 @@ const definition = {
 };
 
 module.exports = definition;
+
 
 
