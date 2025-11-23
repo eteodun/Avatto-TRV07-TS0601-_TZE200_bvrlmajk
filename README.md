@@ -50,12 +50,9 @@ In mostly  times it is necessary to re-pair two times each device in order to co
 ## Installation on Zigbee2MQTT version greater than 2.00
 On folder zigbee2mqtt create new folder named "external_converters" and place external convertor file in this director.  
 
-
-![Alt text](pictures/Zigbee_Device.JPG)
-
 ## Usage
 
-This TRV can be used in Home Assistant with automations or  topics MQTT.
+This TRV can be used in Home Assistant with automations or topics MQTT.
 
 Example to create temperature sensor from TRV valve in Home Assistant
 
