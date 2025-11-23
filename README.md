@@ -12,7 +12,29 @@ TFTDgh
 
 ## Please don't associate or report  issues related to problems by supported devices provided by Zigbee2MQTT. 
 ## This external convertor has been created before Zigbee2MQTT to  publish support for this type of TRV valve and was not implemented on their supported devices database.
+## Supported Options
 
+### Options tested and working
+- Child lock
+- Battery level
+- Position valve report
+- Current heating setpoint
+- Local temperature calibration
+- Preset mode: auto, manual, off, on
+- Running state
+- Display brightness
+- Screen orientation
+- Mode: comfort or eco (Thanks to TFTDgh)
+- Linkquality report
+- Scheduler / day
+
+### Options not fully tested
+- Window open/closed detection  
+  *Not fully tested due to firmware constraints that are hard to reproduce.*  
+  *According to the user manual: "Temperature drops by more than 1.5°C within 4.5 min".*
+
+### Options attempted but could not be tested
+- Fault TRV
 ## Installation on Zigbee2MQTT version older than 2.00
 Upload tuyats601.js to zigbee2mqtt folder.
 Add to zigbee2mqtt/configuration.yaml 
