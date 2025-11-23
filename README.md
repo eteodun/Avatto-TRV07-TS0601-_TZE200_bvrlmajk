@@ -90,5 +90,5 @@ https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuy
 
 # Avatto TRV07 TS0601 Converter
 
-Original implementation by eteodun, Mar 21, 2024  
+Original implementation by eteodun, Dec 19, 2023  
 Licensed under GPL-3.0
