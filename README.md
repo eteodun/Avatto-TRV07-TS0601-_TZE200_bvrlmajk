@@ -4,10 +4,11 @@
 ![Alt text](pictures/Avatto-TRV07-TS0601.JPG)
 
 The convertor has been tested and worked fine with Zigbee2MQTT fresh installed.
+# Acknowledgements
 
-Thanks for help and contribution to improve code :
-  MacDada Dawid Nowak
-  TFTDgh
+Thanks for help and contribution to improve code:  
+MacDada Dawid Nowak  
+TFTDgh
 
 ## Please don't associate or report  issues related to problems by supported devices provided by Zigbee2MQTT. 
 ## This external convertor has been created before Zigbee2MQTT to  publish support for this type of TRV valve and was not implemented on their supported devices database.
