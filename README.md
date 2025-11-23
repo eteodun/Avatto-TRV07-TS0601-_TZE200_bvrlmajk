@@ -5,7 +5,12 @@
 
 The convertor has been tested and worked fine with Zigbee2MQTT fresh installed.
 
-I recommend fresh installation of zigbee2MQTT in case other converters were used for this type of valve. 
+Thanks for help and contribution to improve code :
+  MacDada Dawid Nowak
+  TFTDgh
+  
+  
+[climate.trv_room_3](https://github.com/TFTDgh)
 
 ## Please don't associate or report  issues related to problems by supported devices provided by Zigbee2MQTT. 
 ## This external convertor has been created before Zigbee2MQTT to  publish support for this type of TRV valve and was not implemented on their supported devices database.
@@ -84,3 +89,6 @@ https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuy
 
 ## License
 [GPL](https://choosealicense.com/licenses/gpl-3.0/)
+Avatto TRV07 TS0601 converter
+Original implementation by eteodun, Mar 21, 2024
+Licensed under GPL-3.0
