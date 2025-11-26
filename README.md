@@ -47,17 +47,19 @@ external_converters:
 Restart zigbee2MQTT service and start to pair devices. 
 
 I saw during the tests that after pair some valueas appear with N/A.
-In mostly  times it is necessary to re-pair two times each device in order to configured on zigbee GUI. You can press interview button and repair device. (keep pressed button ~10 Sec)
+In mostly  times it is necessary to re-pair two times each device in order to configured on zigbee GUI. You can press interview button and re-pair device. (keep pressed button ~10 Sec)
 Also, you can set manually first time Child lock, Display brightness,Screen orientation, preset mode,etc
-  
+In case that before was used other version, please remove devices from zigbee2mqtt and be sure that state.json and database.db is cleaned and not contain anymore these devices.  
 
 ## Installation on Zigbee2MQTT version greater than 2.00
 On folder zigbee2mqtt create new folder named "external_converters" and place external convertor file in this director.  
 Restart zigbee2MQTT service and start to pair devices. 
 
 I saw during the tests that after pair some valueas appear with N/A.
-In mostly  times it is necessary to re-pair two times each device in order to configured on zigbee GUI. You can press interview button and repair device. (keep pressed button ~10 Sec)
-Also, you can set manually first time Child lock, Display brightness,Screen orientation, preset mode,etc
+In most times it is necessary to re-pair two times each device in order to configure on zigbee GUI. You can press interview button and re-pair device. (keep pressed button ~10 Sec)
+Also, you can set manually first time Child lock, Display brightness,Screen orientation, preset mode,etc.
+
+In case that before was used other version, please remove devices from zigbee2mqtt and be sure that state.json and database.db is cleaned and not contain anymore these devices.
 
 ## Usage
 
