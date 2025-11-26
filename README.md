@@ -63,8 +63,6 @@ I saw during the tests that after pair some valueas appear with N/A.
 In most times it is necessary to re-pair two times each device in order to configure on zigbee GUI. You can press interview button and re-pair device. (keep pressed button ~10 Sec)
 Also, you can set manually first time Child lock, Display brightness,Screen orientation, preset mode,etc.
 
-In case that before was used other version, please remove devices from zigbee2mqtt and be sure that state.json and database.db is cleaned and not contain anymore these devices.
-
 ## Usage
 
 This TRV can be used in Home Assistant with automations or topics MQTT.
